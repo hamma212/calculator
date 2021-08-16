@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<style>
+    html, body {
+        margin: 0;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #99c499;
+        font-family: 'Quicksand', 'Roboto', sans-serif;
+    }
+    .calculator-container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        height: 500px;
+        width: 300px;
+        background-color: rgb(58, 58, 58);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .calculator-display {
+        position: relative;
+        height: 100px;
+        background-color: rgb(88, 88, 88);
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+    .display-content {
+        color: #99c499;
+        position: absolute;
+        bottom: -10px;
+        right: 15px;
+        font-size: xx-large;
+    }
+    .buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 375px;
+        border-radius: 10px;
+        background-color: rgb(64, 64, 64);
+        padding: 15px;
+    }
+    .buttons {
+        background-color: rgb(88, 88, 88);
+        border-radius: 50%;
+        border: none;
+        height: 60px;
+        width: 60px;
+        color: white;
+        font-size: larger;
+    }
+    .buttons:hover {
+        background-color: #99c499;
+        color: rgb(64, 64, 64);
+        cursor: pointer;
+    }
+    .buttons:active {
+        transform: translateY(2px);
+    }
+    .operator-btn:hover {
+        background-color: #fcb31b;
+    }
+    .big-button {
+        width: 130px;
+        border-radius: 30px;
+    }
+    #equals-btn:hover {
+        background-color: dodgerblue;
+    }
+    #clear-btn:hover {
+        background-color: #CB4C4E ;
+    }
+
+
+</style>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <div class="calculator-container">
+            <div class="calculator-display">
+                <p class="display-content">23</p>
+            </div>
+            <div class="buttons-container">
+                <button class="buttons big-button" id="clear-btn">C</button>
+
+                <button class="buttons operator-btn" id="plusminus-btn">+/-</button>
+
+                <button class="buttons operator-btn" id="divide-btn">/</button>
+
+                <button class="buttons">7</button>
+                <button class="buttons">8</button>
+                <button class="buttons">9</button>
+
+                <button class="buttons operator-btn" id="multiply-btn">x</button>
+
+                <button class="buttons">4</button>
+                <button class="buttons">5</button>
+                <button class="buttons">6</button>
+
+                <button class="buttons operator-btn" id="minus-btn">-</button>
+
+                <button class="buttons">1</button>
+                <button class="buttons">2</button>
+                <button class="buttons">3</button>
+
+                <button class="buttons operator-btn" id="plus-btn">+</button>
+
+                <button class="buttons">0</button>
+                <button class="buttons">.</button>
+
+                <button class="buttons big-button" id="equals-btn">=</button>
+            </div>
+
+        </div>
+        <script>
+            function add(a, b) {
+                return a + b;
+            }
+            function subtract(a, b) {
+                return a - b;
+            }
+            function multiply(a, b) {
+                return a * b;
+            }
+            function divide(a, b) {
+                return a / b;
+            }
+            function operate(operator, a, b) {
+                a = Number(a);
+                b = Number(b);
+                if (operator == '+') {
+                    return add(a, b)
+                }
+                else if (operator == '-') {
+                    return subtract(a, b)
+                }
+                else if (operator == '*') {
+                    return multiply(a, b)
+                }
+                else if (operator == '/') {
+                    if (b !== 0) {
+                        return divide(a, b)
+                    }
+                }
+            }
+    
+        </script>
+    </body>
+</html>
